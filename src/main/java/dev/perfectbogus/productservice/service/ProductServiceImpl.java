@@ -33,7 +33,6 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    @Transactional
     public ProductResponseDTO getProductById(UUID id) {
         Product product = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + id));
